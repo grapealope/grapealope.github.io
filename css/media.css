@@ -63,7 +63,7 @@ body, h1, h2, h3, h4, h5, h6 {
 .jumbotron h1 {
   background: #fff;
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 2.0em;
   margin-bottom: 0;
   padding: 0.5em;
   text-transform: uppercase;
@@ -86,7 +86,7 @@ footer {
 }
 @media screen and (max-width: 1200px) {
   .jumbotron {
-    height: 350px;
+    height: 300px;
   }
 }
 @media screen and (max-width: 768px) {
