@@ -97,6 +97,9 @@ footer {
   .jumbotron {
     height: 300px;
   }
+  .container {
+    max-width: 100%;
+  }
 }
 @media screen and (max-width: 768px) {
   .jumbotron {
@@ -118,6 +121,9 @@ footer {
   .media-benefit {
     margin-bottom: 2em;
   }
+  .container {
+    max-width: 100%;
+  }
 }
 @media screen and (max-width: 480px) {
   body {
@@ -127,6 +133,9 @@ footer {
     font-size: 12px;
     height: 150px;
     padding-top: 0.1em;
+  }
+  .container {
+    max-width: 100%;
   }
   footer .pull-right {
     display: none;
