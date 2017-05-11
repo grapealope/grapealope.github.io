@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 
+<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:300,700" rel="stylesheet"> -->
+<style>
+  
+  body{
+    font-family: 'Libre Franklin', sans-serif;
+    background: black;
+    text-align: center;
+  }
+
+</style>
+
+</head>
+<body>
+  <svg id='svgVis'></svg>
+
+<script src="js/d3.v4.min.js" type="text/javascript" ></script>
+<script>
+
+var windowWidth = window.innerWidth;
+
+var windowHeight = window.innerHeight;
+
+var margin = {top: 0, right: 0, bottom: 0, left: 0},
+    width = windowWidth - margin.left - margin.right,
+    height = windowHeight - margin.top - margin.bottom;
+
+var svg = d3.select("body").select("#svgVis")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("data/secrets_italian_LS.tsv", function(data) {
+
+  var dataLength = data.length;
+
+  var textVis = svg.selectAll('text');
+
+  var dataSet = []
+
+  function drawText(currentSelection) {
+
+    textVis = svg.selectAll('text')
+      .data(currentSelection, function(d,i) { return d.index; });
+
+    textVis.exit()
+      .transition()
+      .duration(function() {
+        return Math.random()*1000+500
+      })
+      .style('opacity', 0)
+      .remove();
+
+    textVis
+      .enter()
+      .append('text')
+      .attr('x', function() {
+        return Math.random()*windowWidth
+      })
+      .attr('y', function() {
+        return Math.random()*windowHeight
+      })
+      .style('font-size', function() {
+        return Math.random()*50+"px"
+      })
+      .style('opacity', 0)
+      .transition()
+      .style('fill', '#fff')
+      .text(function(d) {
+        if (d.index < 151) {
+          return d['italian']
+        } else {
+          return d['english']
+        }
+      })
+      .duration(Math.random()*10000)
+      .style('opacity', function() {
+        return Math.random()
+      })
+
+  }
+
+  function dataAdding() {
+
+    dataSet.push(data[Math.round(Math.random()*dataLength)]);
+    dataSet.push(data[Math.round(Math.random()*dataLength)]);
+
+    // drawText(dataSet);
+
+    setTimeout(function() { dataAdding(); }, Math.round(Math.random()*2000));
+
+  }
+
+  function dataRemoving() {
+
+    dataSet.shift();
+    dataSet.pop();
+
+    // drawText(dataSet);
+
+    setTimeout(function() { dataRemoving(); }, Math.round(Math.random()*2000));
+
+  }
+
+  function drawInit() {
+
+    drawText(dataSet);
+
+    setTimeout(function() { drawInit(); }, Math.round(Math.random()*2000));
+  }
+
+  function dataInit() {
+    var dataNumbers = Math.round(Math.random()*20);
+
+    for (var i = dataNumbers; i >= 0; i--) {
+      dataSet.push(data[Math.round(Math.random()*dataLength)]);
+    }
+
+    dataAdding();
+    dataRemoving();
+    drawInit();
+
+  }
+
+  dataInit();  
+
+});
+
+
+</script>
+</script>
+</body>
+</html>
