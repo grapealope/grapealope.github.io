@@ -44,6 +44,8 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
   function drawText(currentSelection) {
 
+    console.log('new selection')
+
     textVis = svg.selectAll('text')
       .data(currentSelection, function(d,i) { return d.index; });
 
@@ -111,7 +113,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
     drawText(dataSet);
 
-    var timeout = Math.round(Math.random()*2000) + 0;
+    var timeout = Math.round(Math.random()*2000) + 3000;
     setTimeout(function() { drawInit(); }, timeout);
   }
 
