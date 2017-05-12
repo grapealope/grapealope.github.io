@@ -50,7 +50,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
     textVis.exit()
       .transition()
       .duration(function() {
-        return Math.random()*1000+500
+        return Math.random()*5000+1000
       })
       .style('opacity', 0)
       .remove();
