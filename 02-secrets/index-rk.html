@@ -90,8 +90,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
     dataSet.push(data[Math.round(Math.random()*dataLength)]);
 
     // drawText(dataSet);
-    var timeout = Math.round(Math.random()*2000) + 1000;
-    console.log('add timeout: ', timeout)
+    var timeout = Math.round(Math.random()*5000) + 5000;
     setTimeout(function() { dataAdding(); }, timeout);
 
   }
@@ -103,8 +102,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
     // drawText(dataSet);
 
-    var timeout = Math.round(Math.random()*2000) + 1000;
-    console.log('remove timeout: ', timeout)
+    var timeout = Math.round(Math.random()*2000) + 2000;
     setTimeout(function() { dataRemoving(); }, timeout);
 
   }
@@ -113,8 +111,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
     drawText(dataSet);
 
-    var timeout = Math.round(Math.random()*2000) + 1000;
-    console.log('draw timeout: ', timeout)
+    var timeout = Math.round(Math.random()*5000) + 3000;
     setTimeout(function() { drawInit(); }, timeout);
   }
 
