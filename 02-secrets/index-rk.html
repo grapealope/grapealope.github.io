@@ -115,7 +115,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
   function dataInit() {
     var dataNumbers = Math.round(Math.random()*20);
-    console.log(dataNumbers)
+    console.log('dataInit')
 
     for (var i = dataNumbers; i >= 0; i--) {
       dataSet.push(data[Math.round(Math.random()*dataLength)]);
