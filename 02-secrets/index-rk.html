@@ -88,6 +88,8 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
   function dataAdding() {
 
+    console.log('adding data')
+
     dataSet.push(data[Math.round(Math.random()*dataLength)]);
     dataSet.push(data[Math.round(Math.random()*dataLength)]);
 
@@ -98,6 +100,8 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
   }
 
   function dataRemoving() {
+
+   console.log('removing data')
 
     dataSet.shift();
     dataSet.pop();
