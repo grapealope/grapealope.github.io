@@ -65,7 +65,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
         return Math.random()*windowHeight
       })
       .style('font-size', function() {
-        return Math.random()*40+10+"px"
+        return Math.random()*40+15+"px"
       })
       .style('opacity', 0)
       .transition()
@@ -119,7 +119,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
   }
 
   function dataInit() {
-    var dataNumbers = Math.round(Math.random()*20);
+    var dataNumbers = Math.round(Math.random()*10);
     console.log('dataNumbers: ', dataNumbers)
 
     for (var i = dataNumbers; i >= 0; i--) {
