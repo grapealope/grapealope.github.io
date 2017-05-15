@@ -99,8 +99,8 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
   function dataRemoving() {
 
-    // dataSet.shift();
-    dataSet.pop();
+    dataSet.shift();
+    // dataSet.pop();
 
     var timeout = Math.round(Math.random()*1000) + 2000;
     setTimeout(function() { dataRemoving(); }, timeout);
