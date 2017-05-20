@@ -48,6 +48,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
     textVis = svg.selectAll('text')
       .data(currentSelection, function(d,i) { return d.index; });
+      console.log(d)
 
     textVis.exit()
       .transition()
