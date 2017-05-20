@@ -82,7 +82,10 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
           return d['english']
         }
       })
-      .duration(Math.random()*12500+500)
+      // .duration(Math.random()*12500+500)
+      .duration(function() {
+        return Math.random()*12500+500
+        })
       .delay(function(d, i) { return i * 10; })
       .style('opacity', function() {
         return Math.random()
