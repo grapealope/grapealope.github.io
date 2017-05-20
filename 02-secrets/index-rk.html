@@ -52,7 +52,8 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
     textVis.exit()
       .transition()
       .duration(function() {
-        return Math.random()*5000+2000
+        // return Math.random()*5000+2000
+        return Math.random()*5000+500
       })
       .style('opacity', 0)
       .remove();
@@ -67,7 +68,8 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
         return Math.random()*windowHeight
       })
       .style('font-size', function() {
-        return Math.random()*40+15+"px"
+        return Math.random()*40+5+"px"
+        // return Math.random()*40+15+"px"        
       })
       .style('opacity', 0)
       .transition()
@@ -121,7 +123,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
   function dataInit() {
 
     console.log('dataInit')
-    var dataNumbers = Math.round(Math.random()*3) + 1;
+    var dataNumbers = Math.round(Math.random()*6) + 1;
     console.log('dataNumbers: ', dataNumbers)
 
     for (var i = dataNumbers; i >= 0; i--) {
