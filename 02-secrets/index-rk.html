@@ -44,7 +44,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
   function drawText(currentSelection) {
 
-    console.log('new selection')
+    console.log('drawText')
 
     textVis = svg.selectAll('text')
       .data(currentSelection, function(d,i) { return d.index; });
@@ -89,6 +89,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
   function dataAdding() {
 
+    console.log('dataAdding, dataSet #:', dataSet.length)
     dataSet.push(data[Math.round(Math.random()*dataLength)]);
     dataSet.push(data[Math.round(Math.random()*dataLength)]);
 
@@ -99,6 +100,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
   function dataRemoving() {
 
+    console.log('dataRemoving, dataSet #:', dataSet.length)
     dataSet.shift();
     dataSet.pop();
 
@@ -109,6 +111,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
 
   function drawInit() {
 
+    console.log('drawInit, dataSet #:', dataSet.length)
     drawText(dataSet);
 
     var timeout = Math.round(Math.random()*3000) + 2000;
@@ -116,12 +119,16 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
   }
 
   function dataInit() {
+
+    console.log('dataInit')
     var dataNumbers = Math.round(Math.random()*3) + 1;
     console.log('dataNumbers: ', dataNumbers)
 
     for (var i = dataNumbers; i >= 0; i--) {
       dataSet.push(data[Math.round(Math.random()*dataLength)]);
     }
+
+    console.log('dataSet #:', dataSet.length)
 
     dataAdding();
     dataRemoving();
