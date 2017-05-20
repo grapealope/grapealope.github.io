@@ -83,15 +83,15 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
           return d['english']
         }
       })
-      // .duration(Math.random()*12500+500)
+      .duration(Math.random()*12500+500)
       .delay(function(d, i) { return i * 1000; })      
-      .duration(function() {
-        return Math.random()*12500+500
-        })
+      // .duration(function() {
+      //   return Math.random()*12500+500
+      //   })
       // .delay(function(d, i) { return i * 10; })
       .style('opacity', function() {
         return Math.random()
-      })
+      });
 
   }
 
@@ -132,8 +132,7 @@ d3.tsv("data/secrets_italian_LS.tsv", function(data) {
   function dataInit() {
 
     console.log('dataInit')
-    var dataNumbers = Math.round(Math.random()*6) + 1;
-    // var dataNumbers = Math.round(Math.random()*2) + 1;
+    var dataNumbers = Math.round(Math.random()*3) + 1;
     console.log('dataNumbers: ', dataNumbers)
 
     for (var i = dataNumbers; i >= 0; i--) {
