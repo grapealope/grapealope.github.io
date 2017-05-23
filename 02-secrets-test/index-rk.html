@@ -137,7 +137,8 @@ d3.tsv("data/secrets_italian_LS_test.tsv", function(data) {
     console.log('dataNumbers: ', dataNumbers)
 
     for (var i = dataNumbers; i >= 0; i--) {
-      dataSet.push(data[Math.round(Math.random()*dataLength)]);
+      dataSet.push(data[i]);
+      // dataSet.push(data[Math.round(Math.random()*dataLength)]);
     }
 
     console.log('dataSet #:', dataSet.length)
